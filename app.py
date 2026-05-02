@@ -46,8 +46,13 @@ def weather():
         result += f"📅 Day {i+1}\n🌡 Temp: {temp}°C\n☁ {desc}\n\n"
 
     return jsonify({
-        "response": result
-    })
+  "generic": [
+    {
+      "response_type": "text",
+      "text": result
+    }
+  ]
+})
 
 if __name__ == "__main__":
     app.run()
